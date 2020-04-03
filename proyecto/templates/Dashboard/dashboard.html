@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {# Cargamos la librería #}
+    {% load bootstrap4 %}
+
+    {# CSS Bootstrap #}
+    {% bootstrap_css %}
+</head>
+<body background="https://image.freepik.com/foto-gratis/fondo-negro-vacio-luz-iluminada-ademas_93675-45849.jpg">
+    <div style="text-align: center;">
+        <h3 style="color:black">Informacion del usuario</h3>
+        <br><br>
+        <h4 style="color:black">Nombre de Usuario: {{request.user.username}}</h4>
+        <h4 style="color:black">Nombre: {{request.user.first_name}}</h4>
+        <h4 style="color:black">Apellido: {{request.user.last_name}}</h4>
+        <h4 style="color:black">Email: {{request.user.email}}</h4>
+        <br>
+<a href="{% url 'logout' %}">Cerrar sesion</a>
+    </div>
+    {% bootstrap_javascript jquery='full' %}
+</body>
+</html>
